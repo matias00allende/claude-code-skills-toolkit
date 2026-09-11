@@ -91,6 +91,11 @@ propios para no diluir el catálogo:
   por ser una técnica de análisis estratégico, no una skill de flujo de
   desarrollo general.
 
+## Autor
+
+Matías Allende
+[LinkedIn](https://www.linkedin.com/in/matiasallende/) · matias.allende.contreras@gmail.com
+
 ## Licencia
 
 MIT. Ver [LICENSE](LICENSE).
