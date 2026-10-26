@@ -7,8 +7,8 @@ description: >
   CSV o HTML para analizar, diga "lee el PDF", "analiza este documento", "extrae
   el contenido de", "lee el archivo", "abre el PDF", o comparta una ruta de
   archivo que no sea código fuente. No usar para leer archivos de código fuente
-  (.py, .js, .ts, etc.), usar Read directamente en esos casos. NUNCA usar Read
-  sobre un PDF.
+  (.py, .js, .ts, etc.), usar Read directamente en esos casos. No usar Read para extraer
+  texto de un PDF; solo para PDF escaneados o contenido visual.
 model: haiku
 disable-model-invocation: false
 allowed-tools: Bash Read

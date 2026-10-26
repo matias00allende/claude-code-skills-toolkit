@@ -22,7 +22,7 @@
 - `Invoke-Expression` con strings dinámicas - command injection
 - `-ExecutionPolicy Bypass` innecesario - debilita postura de seguridad
 - Credenciales en `ConvertTo-SecureString` con strings hardcodeados - secreto expuesto
-- `[System.Net.WebClient]` sin TLS forzado - tráfico en claro
+- `[System.Net.WebClient]` con URL `http://` o sin versión mínima de TLS configurada - revisar el esquema de la URL: HTTP viaja en claro
 
 ## Bash / Shell
 

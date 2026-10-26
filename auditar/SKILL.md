@@ -1,7 +1,7 @@
 ---
 name: auditar
 description: >
-  Ejecuta auditoria de seguridad sobre un proyecto o componente, entregando
+  Ejecuta una auditoría de seguridad sobre un proyecto o componente, entregando
   hallazgos priorizados con severidad, impacto, evidencia y recomendación
   concreta. Usar cuando el usuario diga "auditar", "audit", "audita",
   "hallazgos de seguridad", "revisar seguridad", "análisis de vulnerabilidades",

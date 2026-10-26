@@ -26,7 +26,7 @@ Según el tipo de trabajo realizado, determina qué comando confirma que el resu
 | Script o código nuevo | Ejecutar el script con caso de prueba; verificar salida esperada |
 | Cambio en infraestructura como código (Terraform/CloudFormation) | Comando de validación de sintaxis del proveedor (`terraform validate`, `aws cloudformation validate-template`, etc.) |
 | Deploy a un entorno cloud | Comando de estado del proveedor (`aws cloudformation describe-stacks`, `terraform show`, etc.) - verificar que el estado reportado sea el esperado |
-| Modificación de archivo de configuración | Leer el archivo modificado y confirmar que el cambio está presente |
+| Modificación de archivo de configuración | Leer el archivo modificado y confirmar que el cambio está presente; si afecta el comportamiento del sistema, ejecutar además la validación o prueba correspondiente |
 | Creación de archivo | Confirmar que el archivo existe en la ruta esperada con `Glob` |
 | Cambio en función serverless / servicio desplegado | Verificar que el código desplegado corresponde a la versión esperada |
 | Modificación de skill/hook de Claude Code | Leer el archivo `SKILL.md` o `settings.json` y confirmar el cambio |

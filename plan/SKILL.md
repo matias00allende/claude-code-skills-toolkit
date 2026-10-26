@@ -55,7 +55,7 @@ Descompone el trabajo en tareas que cumplan todos estos criterios:
 
 - **Duración:** 2-15 minutos de implementación real (no "implementar el módulo X" - demasiado grande)
 - **Verificable:** cada tarea tiene un criterio claro de "hecho" - si no puedes definirlo, la tarea no está bien definida
-- **Independiente cuando sea posible:** minimize dependencias entre tareas
+- **Independiente cuando sea posible:** minimiza las dependencias entre tareas
 - **Un responsable:** cada tarea la hace una persona o un agente - sin ambigüedad
 
 **Formato de tarea:**

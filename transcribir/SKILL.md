@@ -2,14 +2,14 @@
 name: transcribir
 description: >
   Transcribe audio o video a texto usando openai-whisper, corriendo localmente
-  (con aceleracion GPU si esta disponible). Si el input es una URL (ej. video de
+  (con aceleración GPU si está disponible). Si el input es una URL (ej. video de
   YouTube), descarga el audio primero con yt-dlp. Usar cuando el usuario diga
-  "transcribe este audio", "pasa a texto esta reunion", "transcribe el video de",
+  "transcribe este audio", "pasa a texto esta reunión", "transcribe el video de",
   "genera el acta de audio de", "necesito la transcripción de", "convierte este
   podcast/video a texto". No usar para resumir o interpretar el contenido ya
   transcrito (eso es tarea normal del modelo sobre el .txt resultante), ni para
   traducción de idiomas distinta de la transcripción misma (whisper traduce a
-  ingles con --task translate si se necesita, indicarlo explicitamente).
+  ingles con --task translate si se necesita, indicarlo explícitamente).
 model: haiku
 disable-model-invocation: false
 allowed-tools: Read Bash
@@ -56,7 +56,7 @@ Modelos disponibles (`--modelo`): `tiny`/`base`/`small`/`medium`/`large`/`turbo`
 Las transcripciones de reuniones, llamadas o capacitaciones pueden contener **datos personales** de terceros (nombres, situaciones laborales, opiniones).
 
 - **Nunca** pegar el contenido completo de una transcripción identificable en un sistema de memoria persistente del agente.
-- El archivo de salida queda bajo control de quien ejecuta la tarea, en el directorio que indique - esa es la única copia persistente.
+- El archivo de salida queda en el directorio que indique quien ejecuta la tarea. El agente no genera otras copias, pero los respaldos o la sincronización de ese directorio pueden duplicarlo.
 - Si se necesita registrar que se hizo una transcripción, documentar solo metadatos (fecha, tema, ruta del archivo de salida), nunca el contenido.
 
 ---

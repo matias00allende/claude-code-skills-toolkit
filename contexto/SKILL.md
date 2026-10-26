@@ -76,11 +76,12 @@ preservando lo que Claude aprendió, pero eliminando el ruido acumulado.
 /compact
 ```
 
-**Qué preserva:** el conocimiento del proyecto, las decisiones tomadas, el estado
+**Qué conserva:** un resumen del conocimiento del proyecto, las decisiones tomadas y el estado
 actual del trabajo.
 
 **Qué descarta:** mensajes intermedios, iteraciones de debugging, respuestas
-duplicadas, intentos fallidos.
+duplicadas, intentos fallidos. El resumen puede perder detalles: guarda en un archivo lo que
+no puedas permitirte perder antes de compactar.
 
 **Nota:** `autoCompactEnabled: true` en `settings.json` activa esto automáticamente
 cuando el contexto se acerca al límite.

@@ -47,7 +47,7 @@ Buscar patrones de:
 | A02 | Fallos criptográficos | MD5/SHA1 para passwords; HTTP sin TLS; datos sensibles en logs; cifrado débil |
 | A03 | Inyección | SQL injection (concatenación directa de strings en queries); XSS (outputs sin escapar); Command injection (subprocess con input del usuario); LDAP injection |
 | A04 | Diseño inseguro | Lógica de negocio bypass; ausencia de rate limiting; flujos sin validación de estado |
-| A05 | Misconfiguracion de seguridad | Debug mode activo; stack traces al usuario; CORS abierto (`*`); headers de seguridad faltantes |
+| A05 | Configuración incorrecta de seguridad | Debug mode activo; stack traces al usuario; CORS abierto (`*`); headers de seguridad faltantes |
 | A06 | Componentes vulnerables | Dependencias con versiones pinned antiguas; imports de librerías abandonadas |
 | A07 | Fallos de autenticación | Tokens sin expiración; passwords sin hashing (bcrypt/argon2); sesiones sin invalidación |
 | A08 | Integridad de software | Deserialización de datos no confiables; eval/exec con input externo; pickle inseguro |
@@ -61,7 +61,7 @@ Ver [reference/patterns.md](reference/patterns.md) para la lista completa por le
 ### 2.4 Compliance de ciberseguridad
 
 Verificar alineación con:
-- **CIS Controls v8:** Control 4 (config segura), Control 14 (protección datos), Control 16 (seguridad app)
+- **CIS Controls v8:** Control 4 (config segura), Control 3 (protección de datos), Control 16 (seguridad app)
 - **NIST SP 800-53:** SI-10 (validación input), IA-5 (gestión credenciales), AU-3 (contenido de auditoría)
 - **ISO 27001 A.14:** Requisitos de seguridad en sistemas de información
 - **Normativa de protección de datos personales aplicable a la jurisdicción del proyecto:** datos personales en código o logs sin enmascarar, transferencia internacional sin declarar. Ejemplos según jurisdicción: GDPR (UE), Ley 21.719 (Chile), LGPD (Brasil), CCPA (California). Identificar cuál aplica según dónde opera el sistema, no asumir una por defecto.

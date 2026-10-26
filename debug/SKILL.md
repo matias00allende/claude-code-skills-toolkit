@@ -37,7 +37,7 @@ Si ya tienes el stack trace completo y el código en contexto: proceder directam
 
 ## Fase 1 - Reproducir
 
-**Objetivo:** confirmar que el problema es real y entender sus condiciones exactas.
+**Objetivo:** reproducir el problema y entender sus condiciones exactas. Si no puedes reproducirlo, registra esa limitación y el motivo antes de continuar.
 
 1. Lee el mensaje de error o síntoma completo tal como lo reporta el usuario o el sistema.
 2. Identifica:
@@ -46,7 +46,7 @@ Si ya tienes el stack trace completo y el código en contexto: proceder directam
    - ¿En qué condiciones ocurre? (siempre, a veces, solo con ciertos inputs)
    - ¿Cuándo empezó? (¿hubo un cambio reciente?)
 3. Si hay logs, léelos. Busca el primer error, no el último síntoma.
-4. Si hay stack trace: el error real está en la primera línea del trace, no al fondo.
+4. Si hay stack trace: ubica el mensaje de la excepción y la primera llamada de tu propio código. El orden de las líneas depende del lenguaje (en Python el error queda al final; en Java, al inicio).
 
 **Entregable Fase 1:**
 ```
@@ -101,7 +101,7 @@ H3: [causa específica] - [por qué es candidata]
 - El error ocurre solo en producción → busca diferencias de configuración o datos reales
 - El error ocurre intermitentemente → busca race condition, timeout o dependencia de red
 - El error apareció sin cambios de código → busca cambio en dependencias, infra o datos externos
-- El error tiene stack trace en librería de terceros → el bug está en tu llamada a esa librería, no en ella
+- El error tiene stack trace en librería de terceros → revisa primero los argumentos de tu llamada; si son correctos, revisa la versión y los bugs conocidos de la librería
 
 ---
 
@@ -109,7 +109,7 @@ H3: [causa específica] - [por qué es candidata]
 
 **Objetivo:** aplicar la solución mínima que resuelve H1, luego verificar.
 
-1. Aplica el fix para H1.
+1. Pon a prueba H1 con la verificación definida en la fase anterior; si la evidencia la respalda, aplica la corrección mínima.
 2. Ejecuta la verificación correspondiente (ver skill `verificar` de esta colección) - sin evidencia de que el fix funciona, no está resuelto.
 3. Si el fix no funciona: descarta H1, pasa a H2. No acumules fixes para múltiples hipótesis a la vez.
 4. Si el fix funciona: verifica que no introdujo efectos secundarios en la ruta de código adyacente.
@@ -142,6 +142,6 @@ Lecciones operativas: [si aplica - qué patrón evitar en el futuro]
 
 **El error ocurre solo en producción y no es reproducible localmente:** Buscar diferencias concretas entre entornos: variables de entorno, versiones de dependencias, configuración de red, datos reales vs datos de prueba. Nunca asumir que ambos entornos son idénticos.
 
-**El stack trace apunta a una librería de terceros:** El bug está en la llamada a esa librería, no dentro de ella. Revisar los argumentos que se le pasan: tipo incorrecto, valor nulo, formato inesperado. Solo en casos raros es un bug real de la librería.
+**El stack trace apunta a una librería de terceros:** Lo más probable es que el problema esté en la llamada y no dentro de la librería. Revisar los argumentos que se le pasan: tipo incorrecto, valor nulo, formato inesperado. Si son correctos, revisar la versión instalada y los bugs conocidos de la librería.
 
 **Se aplicaron varios fixes simultáneos y el problema desapareció:** No está resuelto, está enmascarado. Revertir los fixes uno a uno para identificar cuál fue la causa raíz. Dejar solo el fix necesario y eliminar los demás para no introducir deuda técnica.
